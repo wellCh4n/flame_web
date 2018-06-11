@@ -1,8 +1,10 @@
 <template>
     <div>
-        <el-menu :default-active="navList[0].index" mode="horizontal">
+        <el-menu :default-active="navList[activeItem].index" mode="horizontal">
             <el-menu-item v-for="navItem in navList" :index="navItem.index">
-                <router-link :to="{path: navItem.hashTag}">{{navItem.name}}</router-link>
+                <router-link :to="{path: navItem.hashTag}">
+                  {{navItem.name}}
+                </router-link>
             </el-menu-item>
         </el-menu>
     </div>
@@ -11,6 +13,7 @@
 <script>
 export default {
   name: "navigation",
+  props: ['activeItem'],
   data() {
     return {
       navList: [
@@ -46,6 +49,9 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    
   }
 };
 </script>

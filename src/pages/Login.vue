@@ -8,7 +8,7 @@
 
 <script>
 import http from "@/utils/http";
-import Vue from 'vue';
+// import Vue from 'vue';
 export default {
   name: "Login",
   components: {
